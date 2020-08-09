@@ -1,0 +1,13 @@
+command /warn <offlineplayer> <text>:
+  permission: player.warn 
+  trigger:
+    add 1 to {warns::%arg-1's uuid%}
+    set {reason::%arg-1's uuid%} to arg-2
+    send "&7%arg-1%&c has &7%{warns::%arg-1's uuid%}%&c warnings. (/puns [username])"
+    broadcast "&7%arg-1%&c has been warned for &7%arg-2%&c."
+command /puns <offlineplayer>:
+  permission: player.puns
+  trigger:
+    send "&7%{warns::%arg-1's uuid%}%&c Warns."
+    send "&7%{reason::%arg-1's uuid%}%&c Reasons."
+    send "%{reason::%player's uuid%}%"
