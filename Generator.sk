@@ -1,0 +1,13 @@
+on place of cobblestone:
+  send title "&aSuccess!" with subtitle "&7You have successfully placed down a cobblestone generator."
+
+every 5 seconds:
+  loop all players:
+    loop all blocks in radius 5 of loop-players:
+      if loop-block is cobblestone:
+        drop 1 paper named "&cYummy Rock Certificate!" above loop-blocks
+
+on right click on cobblestone:
+  set event-block to air
+  give player 1 cobblestone named "&cCobblestone Generator"
+  send title "&aSuccess!" with subtitle "&7You have successfully picked up a cobblestone generator."
