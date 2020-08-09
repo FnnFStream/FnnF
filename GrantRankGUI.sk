@@ -1,0 +1,11 @@
+command /grant <offlineplayer>:
+  permission: rank.give
+  trigger:
+    set {selected} to arg-1
+    open virtual chest with 1 row named "Grant %{selected}%" to player 
+    format gui slot 0 of player with red wool named "&c[OWNER]" to close:
+      send "&c%{selected}%&c's rank has been set to OWNER."
+      execute console command "/pex user %{selected}% group set Owner" #Not sure the correct command for pex
+    format gui slot 1 of player with magenta wool named "&c[ADMIN]" to close:
+      send "&c%{selected}%&c's rank has been set to ADMIN."
+      execute console command "/pex user %{selected}% group set Admin"
