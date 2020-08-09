@@ -1,0 +1,2 @@
+on chat:
+  set chat format to colored "%player's prefix% %player%&f: %message%"
