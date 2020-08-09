@@ -1,0 +1,14 @@
+function shop(p: player, i: item, c: integer, s: integer):
+  format gui slot {_s} of {_p} with {_i} named "%{_c}%" to run:
+    if {coins::%player's uuid%} >= {_c}:
+      remove {_c} from {coins::%Player's uuid%}
+      give {_i} to player
+      send "&aYou have purchased %{_i}%"
+    else:
+      close player's inventory
+      send "&cYou do not have enough coins to purchase that."
+
+command /Shop:
+  trigger:
+    open virtual chest with 1 row named "Shop" to player
+    shop(player, cobblestone, 100, 0)
