@@ -1,0 +1,8 @@
+#Clear Chat Command
+
+command /clearchat:
+  permission: chat.clear
+  trigger:
+    loop 100 times:
+      broadcast " "
+    broadcast "&cChat has been cleared by &7%player%&c."
