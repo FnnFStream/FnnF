@@ -1,0 +1,10 @@
+command /ban <offlineplayer> <text>:
+  permission: op
+  trigger:
+    execute console command "/ban %arg-1% %arg-2%"
+    add 1 to {bans::%arg-1's uuid%}
+
+command /bancheck <offlineplayer>:
+  permission: op
+  trigger:
+    send "&7%arg-1%&c has been banned &7%{bans::%arg-1's uuid%}%&c times."
