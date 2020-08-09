@@ -1,0 +1,9 @@
+command /coingive <integer>:
+  permission: coin.give 
+  trigger:
+    add arg-1 to {coins::%player's uuid%}
+    send "&cYou have added %arg-1%&c to your account!"
+
+command /bal:
+  trigger:
+    send "&cYou have %{coins::%player's uuid%}%&c in your account"
